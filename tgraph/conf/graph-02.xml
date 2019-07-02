@@ -1,0 +1,13 @@
+<graph>
+
+ <description>This is simple graph</description>
+ <vertices>6</vertices>
+ 
+ <edge from="0" to="1" value="5" />
+ <edge from="1" to="2" value="38" />
+ <edge from="2" to="3" value="6" />
+ <edge from="3" to="0" value="20" />
+ <edge from="4" to="0" value="7" />
+ <edge from="4" to="3" value="8" />
+ 
+</graph>

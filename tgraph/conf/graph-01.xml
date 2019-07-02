@@ -1,0 +1,39 @@
+<graph>
+
+ <description>A Simple Graph</description>
+ <vertices>6</vertices>
+ 
+ <edge from="0" to="1" value="5" />
+ <!-- 
+ <edge from="1" to="2" value="38" />
+  -->
+ <edge from="1" to="2" value="4" />
+ <edge from="2" to="3" value="6" />
+ <edge from="3" to="0" value="20" />
+ <edge from="4" to="0" value="7" />
+ <edge from="4" to="3" value="8" />
+ <edge from="5" to="4" value="1" />
+ </graph>
+ 
+ 
+ <!--- Pictorial Graph -->
+ <!--   (*) Node
+ 
+                   4
+ (0)***5**(1)*******38*******(2)
+   * *                       *
+    *  *                    *
+     *   * 7               *
+      *    *              *
+       *     *  (5)      *
+	    *     * | 1     *   6
+  	20   *     (4)     * 
+          *     |     *
+           *    |8   *
+             *  |   *	      
+              *(3) * 
+
+ 
+ 
+ 
+ -->

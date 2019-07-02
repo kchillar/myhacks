@@ -1,0 +1,47 @@
+Got this from:
+https://stackoverflow.com/questions/6147242/heap-vs-binary-search-tree-bst
+
+java TreeMap and TreeSet are BST Implementations
+
+
+Summary:
+
+          Type      BST (*)   Heap
+Insert    average   log(n)    1
+Insert    worst     log(n)    log(n) or n (***)
+Find any  worst     log(n)    n
+Find max  worst     1 (**)    1
+Create    worst     n log(n)  n
+Delete    worst     log(n)    log(n)
+
+All average times on this table are the same as their worst times except for Insert.
+
+*: everywhere in this answer, BST == Balanced BST, since unbalanced sucks asymptotically
+**: using a trivial modification explained in this answer
+***: log(n) for pointer tree heap, n for dynamic array heap
+Advantages of binary heap over a BST
+
+average time insertion into a binary heap is O(1), for BST is O(log(n)). This is the killer feature of heaps.
+
+There are also other heaps which reach O(1) amortized (stronger) like the Fibonacci Heap, and even worst case, like the Brodal queue, although they may not be practical because of non-asymptotic performance: Are Fibonacci heaps or Brodal queues used in practice anywhere?
+
+binary heaps can be efficiently implemented on top of either dynamic arrays or pointer-based trees, BST only pointer-based trees. So for the heap we can choose the more space efficient array implementation, if we can afford occasional resize latencies.
+
+binary heap creation is O(n) worst case, O(n log(n)) for BST.
+
+Advantage of BST over binary heap
+
+search for arbitrary elements is O(log(n)). This is the killer feature of BSTs.
+
+For heap, it is O(n) in general, except for the largest element which is O(1).
+
+"False" advantage of heap over BST
+
+heap is O(1) to find max, BST O(log(n)).
+
+This is a common misconception, because it is trivial to modify a BST to keep track of the largest element, and update it whenever that element could be changed: on insertion of a larger one swap, on removal find the second largest. Can we use binary search tree to simulate heap operation? (mentioned by Yeo).
+
+Actually, this is a limitation of heaps compared to BSTs: the only efficient search is that for the largest element.
+
+Average binary heap insert is O(1)
+

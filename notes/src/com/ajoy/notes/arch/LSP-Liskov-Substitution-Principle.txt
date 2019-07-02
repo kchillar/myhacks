@@ -1,0 +1,31 @@
+The Liskov Substitution Principle (LSP, lsp) is a concept in Object Oriented Programming that states: 
+Functions that use pointers or references to base classes must be able to use objects of derived classes
+without knowing it.
+
+
+A great example illustrating LSP (given by Uncle Bob in a podcast I heard recently) 
+was how sometimes something that sounds right in natural language doesn't quite work in code.
+
+In mathematics, a Square is a Rectangle. Indeed it is a specialization of a rectangle. 
+The "is a" makes you want to model this with inheritance. 
+However if in code you made Square derive from Rectangle, 
+then a Square should be usable anywhere you expect a Rectangle. 
+This makes for some strange behavior.
+
+Imagine you had SetWidth and SetHeight methods on your Rectangle base class; 
+this seems perfectly logical. However if your Rectangle reference pointed to a Square, 
+then SetWidth and SetHeight doesn't make sense because setting one would change the other to match it. 
+In this case Square fails the Liskov Substitution Test with Rectangle and the abstraction of having 
+Square inherit from Rectangle is a bad one.
+
+Moral of the story: 
+
+model your classes based on behaviours not on properties; model your data based on 
+properties and not on behaviours. If it behaves like a duck, it's certainly a bird.
+
+Comments KC:
+
+-- Based on my own experience, the moral is well summarized.
+
+
+
