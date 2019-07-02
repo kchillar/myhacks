@@ -1,4 +1,0 @@
-<app-config>
-  <data-dir>./data</data-dir>
-  <view-config>./conf/theme1-view-config.xml</view-config>
-</app-config>
