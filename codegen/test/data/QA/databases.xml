@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databases>
+    <db-info name="OrbipayDB" is-selected="true">
+        <url>jdbc:mysql://IP:PORT/schema</url>
+        <user>schema</user>
+        <pass>schema</pass>
+        <driver-class-name>com.mysql.jdbc.Driver</driver-class-name>
+    </db-info>
+</databases>

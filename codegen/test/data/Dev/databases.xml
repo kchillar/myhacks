@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databases>
+
+    <db-info name="DevDB">
+        <url>jdbc:mysql://IP:PORT/schema</url>
+        <user>schema</user>
+        <pass>schema</pass>
+        <driver-class-name>com.mysql.jdbc.Driver</driver-class-name>
+    </db-info>
+
+    <db-info name="CryptoDB" is-selected="true">
+        <url>jdbc:mysql://192.168.35.103:3315/cryptodb_dev</url>
+        <user>cryptodb_dev</user>
+        <pass>cryptodb_dev</pass>
+        <driver-class-name>com.mysql.jdbc.Driver</driver-class-name>
+    </db-info>
+
+</databases>

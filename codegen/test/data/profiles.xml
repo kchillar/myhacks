@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profiles>
+    <profile name="Dev" is-selected="true"/>
+    <profile name="QA" is-selected="false"/>
+    <profile name="Test" is-selected="false"/>
+</profiles>

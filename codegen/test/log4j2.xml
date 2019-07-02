@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" name="GMP" packages="">
+	<Appenders>
+
+       <Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>[%X{loggingKey}-%d{ISO8601}] [%t] %p [%c{3}] - %m%n</pattern>
+			</PatternLayout>
+       </Console>
+
+       <RollingFile name="File" fileName="./ezto.log" filePattern="/tmp/logs/bkp/${date:yyyy-MM}/default-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout>
+				<pattern>%X{loggingKey}-%d{ISO8601} [%t] %p [%c{3}] - %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="6" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.ezto" level="trace" additivity="false">
+			<AppenderRef ref="File" />
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="File" />
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
