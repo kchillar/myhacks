@@ -24,7 +24,8 @@ model your classes based on behaviours not on properties; model your data based 
 properties and not on behaviours. If it behaves like a duck, it's certainly a bird.
 
 Comments KC:
-
+-- Behaviour can be considered as verb where as properties are adjectives
+-- In programming, verb maps to functionality a software offers
 -- Based on my own experience, the moral is well summarized.
 
 

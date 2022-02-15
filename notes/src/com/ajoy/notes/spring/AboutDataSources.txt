@@ -1,0 +1,66 @@
+1) First you have to set application.properties like this
+
+#Database
+database1.datasource.url=jdbc:mysql://localhost/testdb
+database1.datasource.username=root
+database1.datasource.password=root
+database1.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+database2.datasource.url=jdbc:mysql://localhost/testdb2
+database2.datasource.username=root
+database2.datasource.password=root
+database2.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+2) Add in any class annotated with @Configuration the following methods:
+
+Then define them as providers (@Bean) like this:
+
+@Bean(name = "datasource1")
+@ConfigurationProperties("database1.datasource")
+@Primary
+public DataSource dataSource(){
+    return DataSourceBuilder.create().build();
+}
+
+@Bean(name = "datasource2")
+@ConfigurationProperties("database2.datasource")
+public DataSource dataSource2(){
+    return DataSourceBuilder.create().build();
+}
+
+
+3) Define Transaction Manager like
+
+@Bean(name="tm1")
+@Autowired
+@Primary
+DataSourceTransactionManager tm1(@Qualifier ("datasource1") DataSource datasource) {
+    DataSourceTransactionManager txm  = new DataSourceTransactionManager(datasource);
+    return txm;
+}
+
+@Bean(name="tm2")
+@Autowired
+DataSourceTransactionManager tm2(@Qualifier ("datasource2") DataSource datasource) {
+    DataSourceTransactionManager txm  = new DataSourceTransactionManager(datasource);
+    return txm;
+}
+
+4) Auto wire datasource like
+
+@Qualifier("datasource1")
+@Autowired
+private DataSource dataSource;
+
+
+
+5) Use Transactions like:
+
+@Transactional //this will use the first datasource because it is @primary
+or
+@Transactional("tm2")
+
+
+
+
+
