@@ -1,4 +1,4 @@
-package com.ajoy.bst;
+package com.azy.bst;
 
 import java.util.TreeMap;
 

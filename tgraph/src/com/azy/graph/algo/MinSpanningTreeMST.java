@@ -1,8 +1,8 @@
-package com.ajoy.graph.algo;
+package com.azy.graph.algo;
 
 import java.util.Stack;
 
-import com.ajoy.graph.Graph2;
+import com.azy.graph.Graph2;
 
 public class MinSpanningTreeMST 
 {

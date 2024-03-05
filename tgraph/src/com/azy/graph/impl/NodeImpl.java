@@ -1,8 +1,8 @@
-package com.ajoy.graph.impl;
+package com.azy.graph.impl;
 
 import java.util.ArrayList;
 
-import com.ajoy.graph.Node;
+import com.azy.graph.Node;
 
 public class NodeImpl<T extends Comparable<T>> implements Node<T>
 {

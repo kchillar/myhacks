@@ -1,4 +1,4 @@
-package com.ajoy.graph.impl;
+package com.azy.graph.impl;
 
 
 import java.io.File;
@@ -6,10 +6,10 @@ import java.io.FileInputStream;
 import java.util.List;
 import java.util.Stack;
 
-import com.ajoy.graph.Graph;
-import com.ajoy.graph.Node;
-import com.ajoy.graph.builder.EdgeInfo;
-import com.ajoy.graph.builder.GraphInfo;
+import com.azy.graph.Graph;
+import com.azy.graph.Node;
+import com.azy.graph.builder.EdgeInfo;
+import com.azy.graph.builder.GraphInfo;
 
 public class Test 
 {

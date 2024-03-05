@@ -1,4 +1,4 @@
-package com.ajoy.graph;
+package com.azy.graph;
 
 import java.util.List;
 

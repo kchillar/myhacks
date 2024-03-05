@@ -1,4 +1,4 @@
-package com.ajoy.graph;
+package com.azy.graph;
 
 public interface Graph2<T extends Comparable<T>>
 {

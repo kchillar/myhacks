@@ -1,6 +1,6 @@
-package com.ajoy.graph.impl3;
+package com.azy.graph.impl3;
 
-import com.ajoy.graph.Edge;
+import com.azy.graph.Edge;
 
 public class EdgeImpl<T extends Comparable<T>> implements Edge<T>
 {

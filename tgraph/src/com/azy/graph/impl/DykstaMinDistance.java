@@ -1,8 +1,11 @@
-package com.ajoy.graph.algo;
+package com.azy.graph.impl;
 
+
+import java.util.List;
 import java.util.Stack;
 
-import com.ajoy.graph.Graph2;
+import com.azy.graph.Graph;
+import com.azy.graph.Node;
 
 /**
  * 
@@ -43,10 +46,10 @@ import com.ajoy.graph.Graph2;
  *  
  * 
  */
-public class DykstraMinDistance 
+public class DykstaMinDistance 
 {	
 	private static final int Infinity = 2000000;
-	private Graph2<Integer> graph;
+	private Graph<Integer> graph;
 	private boolean[] visitedList;
 	private int[] distanceList;
 	private int[] parentList; //Need this if we have to print the nodes in the computed path
@@ -54,12 +57,12 @@ public class DykstraMinDistance
 	private int current; 	
 	
 
-	public DykstraMinDistance()
+	public DykstaMinDistance()
 	{		
 	}
 	
 
-	public DykstraMinDistance(Graph2<Integer> graph)
+	public DykstaMinDistance(Graph<Integer> graph)
 	{	
 		this.graph = graph;	
 		createLists();		
@@ -88,7 +91,7 @@ public class DykstraMinDistance
 		distanceList[start] = 0;
 	}
 	
-	public int computeMinDistance(Graph2<Integer> graph, int start, int end)	
+	public int computeMinDistance(Graph<Integer> graph, int start, int end)	
 	{
 		this.graph = graph;
 		createLists();
@@ -105,18 +108,18 @@ public class DykstraMinDistance
 		do
 		{					
 			current = newCurr;			
-			int[] adjNodeList = graph.getAdjacentNodesFor(current);					
+			List<Node<Integer>> adjNodeList = graph.getAdjacentNodesFor(current);					
 			if(adjNodeList != null)
 			{
-				for(int to : adjNodeList)
+				for(Node<Integer> node : adjNodeList)
 				{
-					if(!visitedList[to])
+					if(!visitedList[node.getId()])
 					{																									
-						int val = distanceList[current] + graph.getEdge(current, to).getValue().intValue() ; 
-						if(val < distanceList[to])	
+						int val = distanceList[current] + node.getValue().intValue() ; 
+						if(val < distanceList[node.getId()])	
 						{
-							distanceList[to] =  val ;
-							parentList[to] = current;
+							distanceList[node.getId()] =  val ;
+							parentList[node.getId()] = current;
 						}
 					}
 				}

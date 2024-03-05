@@ -1,8 +1,8 @@
-package com.ajoy.graph.algo;
+package com.azy.graph.algo;
 
 import java.util.Stack;
 
-import com.ajoy.graph.Graph2;
+import com.azy.graph.Graph2;
 
 /**
  * 
@@ -43,7 +43,7 @@ import com.ajoy.graph.Graph2;
  *  
  * 
  */
-public class DykstraMinDistanceAlt
+public class DykstraMinDistance 
 {	
 	private static final int Infinity = 2000000;
 	private Graph2<Integer> graph;
@@ -54,12 +54,12 @@ public class DykstraMinDistanceAlt
 	private int current; 	
 	
 
-	public DykstraMinDistanceAlt()
+	public DykstraMinDistance()
 	{		
 	}
 	
 
-	public DykstraMinDistanceAlt(Graph2<Integer> graph)
+	public DykstraMinDistance(Graph2<Integer> graph)
 	{	
 		this.graph = graph;	
 		createLists();		

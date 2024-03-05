@@ -1,11 +1,11 @@
-package com.ajoy.graph.impl;
+package com.azy.graph.impl;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ajoy.graph.Graph;
-import com.ajoy.graph.Node;
+import com.azy.graph.Graph;
+import com.azy.graph.Node;
 
 
 /**

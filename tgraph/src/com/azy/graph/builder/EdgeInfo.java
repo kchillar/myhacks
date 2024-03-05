@@ -1,4 +1,4 @@
-package com.ajoy.graph.builder;
+package com.azy.graph.builder;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

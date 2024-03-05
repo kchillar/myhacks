@@ -1,17 +1,17 @@
-package com.ajoy.graph.tests;
+package com.azy.graph.tests;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Stack;
 
-import com.ajoy.graph.Edge;
-import com.ajoy.graph.Graph2;
-import com.ajoy.graph.algo.DykstraMinDistance;
-import com.ajoy.graph.builder.EdgeInfo;
-import com.ajoy.graph.builder.GraphInfo;
-import com.ajoy.graph.impl3.ArrayBackedGraph;
-import com.ajoy.graph.impl3.EdgeImpl;
+import com.azy.graph.Edge;
+import com.azy.graph.Graph2;
+import com.azy.graph.algo.DykstraMinDistance;
+import com.azy.graph.builder.EdgeInfo;
+import com.azy.graph.builder.GraphInfo;
+import com.azy.graph.impl3.ArrayBackedGraph;
+import com.azy.graph.impl3.EdgeImpl;
 
 public class Test 
 {

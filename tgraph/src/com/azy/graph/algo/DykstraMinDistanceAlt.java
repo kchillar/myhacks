@@ -1,11 +1,8 @@
-package com.ajoy.graph.impl;
+package com.azy.graph.algo;
 
-
-import java.util.List;
 import java.util.Stack;
 
-import com.ajoy.graph.Graph;
-import com.ajoy.graph.Node;
+import com.azy.graph.Graph2;
 
 /**
  * 
@@ -46,10 +43,10 @@ import com.ajoy.graph.Node;
  *  
  * 
  */
-public class DykstaMinDistance 
+public class DykstraMinDistanceAlt
 {	
 	private static final int Infinity = 2000000;
-	private Graph<Integer> graph;
+	private Graph2<Integer> graph;
 	private boolean[] visitedList;
 	private int[] distanceList;
 	private int[] parentList; //Need this if we have to print the nodes in the computed path
@@ -57,12 +54,12 @@ public class DykstaMinDistance
 	private int current; 	
 	
 
-	public DykstaMinDistance()
+	public DykstraMinDistanceAlt()
 	{		
 	}
 	
 
-	public DykstaMinDistance(Graph<Integer> graph)
+	public DykstraMinDistanceAlt(Graph2<Integer> graph)
 	{	
 		this.graph = graph;	
 		createLists();		
@@ -91,7 +88,7 @@ public class DykstaMinDistance
 		distanceList[start] = 0;
 	}
 	
-	public int computeMinDistance(Graph<Integer> graph, int start, int end)	
+	public int computeMinDistance(Graph2<Integer> graph, int start, int end)	
 	{
 		this.graph = graph;
 		createLists();
@@ -108,18 +105,18 @@ public class DykstaMinDistance
 		do
 		{					
 			current = newCurr;			
-			List<Node<Integer>> adjNodeList = graph.getAdjacentNodesFor(current);					
+			int[] adjNodeList = graph.getAdjacentNodesFor(current);					
 			if(adjNodeList != null)
 			{
-				for(Node<Integer> node : adjNodeList)
+				for(int to : adjNodeList)
 				{
-					if(!visitedList[node.getId()])
+					if(!visitedList[to])
 					{																									
-						int val = distanceList[current] + node.getValue().intValue() ; 
-						if(val < distanceList[node.getId()])	
+						int val = distanceList[current] + graph.getEdge(current, to).getValue().intValue() ; 
+						if(val < distanceList[to])	
 						{
-							distanceList[node.getId()] =  val ;
-							parentList[node.getId()] = current;
+							distanceList[to] =  val ;
+							parentList[to] = current;
 						}
 					}
 				}
