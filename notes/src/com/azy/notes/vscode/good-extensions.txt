@@ -1,0 +1,27 @@
+1) Prettier
+
+Prettier is a useful tool that automatically formats your code using opinionated and customizable rules.
+
+2) Javascript Booster
+
+3) ESLint (Javascript lint)
+
+4) GitLens
+
+5) CSSPeek
+
+6) VSCode Icons
+
+
+0) mongosh
+1) show dbs
+2) use custdb
+3) db.createCollection("customers")
+4) db.createCollection("orders")
+5) db.customers.insertOne({name:"John Miller", address:{line1:"145 West Mc. Millan", city:"Cincinnati", state:"Ohio", zip:"45219"}});
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('65e6c3191c05451c4e68e71b')
+}
+ 

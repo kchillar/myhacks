@@ -1,0 +1,33 @@
+1) The mongo server container has mongosh client installed in it.
+
+2) Go into the docker image using:
+docker exec -it my-mongo /bin/bash 
+
+3) and once inside the container run:
+mongosh
+
+root@b5f1937feb0d:/# mongosh
+Current Mongosh Log ID:	65e6c0281c05451c4e68e71a
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5
+Using MongoDB:		7.0.6
+Using Mongosh:		2.1.5
+
+4) To see the databases type:
+show dbs
+
+5) You can create an empty databases by using command:
+use theNameOfTheNewDBYouWant
+use custdb
+
+6) you can create a collection using:
+db.createCollection("someCollectionName")
+db.createCollection("customers")
+db.createCollection("orders")
+
+7) To insert data into the collection we can use:
+db.customers.insertOne(object);
+the object should be javascript object systax:
+
+object = {name:"John Miller", address:{line1:"145 West Mc. Millan", city:"Cincinnati", state:"Ohio", zip:"45219"}}
+
+db.customers.insertOne({name:"John Miller", address:{line1:"145 West Mc. Millan", city:"Cincinnati", state:"Ohio", zip:"45219"}});

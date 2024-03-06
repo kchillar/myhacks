@@ -1,0 +1,33 @@
+1) db.collection.insertOne({})
+2) db.collection.insertMany([{}, {}])
+3) Empty find returns all the objects
+db.collection.find() 
+4) 
+
+db.collection.find(query, projection);
+query will specify the conditions used for searching of the data.
+projection can specify what, data fields we want from the collection
+
+
+For other options see URL:
+https://www.w3schools.com/mongodb/mongodb_mongosh_find.php
+
+5) update 
+db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+
+6) update or insert upsert
+db.posts.updateOne( 
+  { title: "Post Title 5" }, 
+  {
+    $set: 
+      {
+        title: "Post Title 5",
+        body: "Body of post.",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  }, 
+  { upsert: true }
+)

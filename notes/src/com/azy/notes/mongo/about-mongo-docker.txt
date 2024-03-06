@@ -1,0 +1,20 @@
+1) docker pull mongo:jammy
+
+2) docker run --name my-mongo -d mongo:jammy
+
+3) docker exec -it my-mongo bash
+
+4) Run the docker with my-mongodb volume for the data directory
+docker run --name my-mongo -v my-mongodb:/data/db -p 27017:27017  -d mongo:jammy
+a) /data/db is the data directory inside the contianer.
+
+
+5) Using a custom MongoDB configuration file
+For example, /home/kalyanc/my-mongodb-conf/mongod.conf is the path to the custom configuration file. Then start the MongoDB container like the following:
+$ docker run --name my-mongo -v /home/kalyanc/my-mongodb-conf:/etc/mongo -d mongo:jammy --config /etc/mongo/mongod.conf
+
+6) Combinging 4) and 5) This was having an issue on Mac, when using linux image of Mongo. This is because not able to set permissions for /home/kalyanc/my-mongodb-conf in the container
+docker run --name my-mongo -v my-mongodb:/data/db -v /home/kalyanc/my-mongodb-conf:/etc/mongo -d mongo:jammy --config /etc/mongo/mongod.conf
+
+
+

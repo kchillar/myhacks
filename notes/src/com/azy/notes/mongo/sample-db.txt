@@ -1,0 +1,9 @@
+Connect to mongodb using mongosh
+
+0) mongosh
+1) show dbs
+2) use custdb
+3) db.createCollection("customers")
+4) db.createCollection("orders")
+5) db.customers.insertOne({name:"John Miller", address:{line1:"145 West Mc. Millan", city:"Cincinnati", state:"Ohio", zip:"45219"}});
+
